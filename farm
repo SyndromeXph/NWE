@@ -1,0 +1,79 @@
+--// Written By SpookzWasHere 
+
+local isRunning = true  -- Set to true by default since we're running automatically
+
+-- Main generator function
+local function runGenerator()
+    while isRunning do
+        for i, v in ipairs(game.Workspace.Map.Ingame.Map:GetChildren()) do
+            if not isRunning then break end
+            if v.Name == "Generator" then
+                if v.Progress.Value ~= 4 then
+                    local left = true
+                    local right = true
+                    local center = true
+                    local available = 0
+                    
+                    -- Check positions
+                    for index, value in ipairs(game.Players:GetChildren()) do
+                        if value.Character and value.Character:FindFirstChild("HumanoidRootPart") then
+                            if value.Character.HumanoidRootPart.CFrame == v.Positions.Left.CFrame then
+                                available += 1
+                                left = false
+                            end
+                            if value.Character.HumanoidRootPart.CFrame == v.Positions.Right.CFrame then
+                                available += 1
+                                right = false
+                            end
+                            if value.Character.HumanoidRootPart.CFrame == v.Positions.Center.CFrame then
+                                available += 1
+                                center = false
+                            end
+                        end
+                    end
+                    
+                    if available < 3 then
+                        local positiontoUse
+                        if left then
+                            positiontoUse = "Left"
+                        elseif right then
+                            positiontoUse = "Right"
+                        elseif center then
+                            positiontoUse = "Center"
+                        end
+                        
+                        if positiontoUse then
+                            -- Move to generator and work on it
+                            game.Players.LocalPlayer.Character.PrimaryPart.CFrame = v.Positions[positiontoUse].CFrame
+                            wait(0.2)
+                            v.Remotes.RF:InvokeServer("enter")
+                            
+                            for i = 1, 4 do
+                                if not isRunning then break end
+                                wait(1.7)  -- Changed from 1.5 to 1.7 seconds
+                                v.Remotes.RE:FireServer()
+                            end
+                            
+                            wait(0.2)
+                            v.Remotes.RF:InvokeServer("leave")
+                        end
+                    end
+                end
+            end
+        end
+        wait(1) -- Add a small delay between loops to prevent excessive resource usage
+    end
+end
+
+-- Start the generator function
+spawn(runGenerator)
+
+-- Optional: Add a way to stop the script using a key press
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.P then  -- Press 'P' to toggle the script
+        isRunning = not isRunning
+        if isRunning then
+            spawn(runGenerator)
+        end
+    end
+end)
