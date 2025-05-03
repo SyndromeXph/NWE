@@ -3,12 +3,12 @@ local kil = workspace.Players.Killers
 local spe = workspace.Players.Spectating
 local ing = workspace.Map.Ingame
 
-print("BETA被遗弃ESP")
+print("被遗弃ESP")
 
 local function survivoresp(char)
 local billboard = Instance.new("BillboardGui")
-billboard.Size = UDim2.new(9, 0, 0.5, 0) 
-billboard.StudsOffset = Vector3.new(0, 1.25, 0) 
+billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
+billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
 billboard.Adornee = char.Head
 billboard.Parent = char.Head
 billboard.AlwaysOnTop = true
@@ -17,14 +17,14 @@ textLabel.Size = UDim2.new(1, 0, 1, 0)
 textLabel.Position = UDim2.new(0, 1, 0, 1)
 textLabel.BackgroundTransparency = 1
 textLabel.TextScaled = true
-textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth 
+textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth -- Your displayed text
 textLabel.TextColor3 = Color3.fromRGB(255, 100, 28)
 textLabel.Font = Enum.Font.Arcade
 textLabel.Parent = billboard
 
 local charnamebill = Instance.new("BillboardGui")
-charnamebill.Size = UDim2.new(4, 0, 1, 0) 
-charnamebill.StudsOffset = Vector3.new(0, 2, 0) 
+charnamebill.Size = UDim2.new(9, 0, 1, 0) -- Adjust size
+charnamebill.StudsOffset = Vector3.new(0, 2, 0) -- Position above head
 charnamebill.Adornee = char.Head
 charnamebill.Parent = char.Head
 charnamebill.AlwaysOnTop = true
@@ -67,8 +67,8 @@ end
 
 local function killeresp(char)
 local billboard = Instance.new("BillboardGui")
-billboard.Size = UDim2.new(2, 0, 0.5, 0) 
-billboard.StudsOffset = Vector3.new(0, 1.25, 0) 
+billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
+billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
 billboard.Adornee = char.Head
 billboard.Parent = char.Head
 billboard.AlwaysOnTop = true
@@ -77,14 +77,14 @@ textLabel.Size = UDim2.new(1, 0, 1, 0)
 textLabel.Position = UDim2.new(0, 1, 0, 1)
 textLabel.BackgroundTransparency = 1
 textLabel.TextScaled = true
-textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth 
+textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth -- Your displayed text
 textLabel.TextColor3 = Color3.fromRGB(204, 0, 0)
 textLabel.Font = Enum.Font.Arcade
 textLabel.Parent = billboard
 
 local charnamebill = Instance.new("BillboardGui")
-charnamebill.Size = UDim2.new(4, 0, 1, 0) 
-charnamebill.StudsOffset = Vector3.new(0, 2, 0) 
+charnamebill.Size = UDim2.new(9, 0, 1, 0) -- Adjust size
+charnamebill.StudsOffset = Vector3.new(0, 2, 0) -- Position above head
 charnamebill.Adornee = char.Head
 charnamebill.Parent = char.Head
 charnamebill.AlwaysOnTop = true
@@ -125,10 +125,10 @@ return textLabel
 
 end
 
-local function specesp(char) 
+local function specesp(char) --useless
 local billboard = Instance.new("BillboardGui")
-billboard.Size = UDim2.new(2, 0, 0.5, 0) 
-billboard.StudsOffset = Vector3.new(0, 1.25, 0) 
+billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
+billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
 billboard.Adornee = char.Head
 billboard.Parent = char.Head
 billboard.AlwaysOnTop = true
@@ -137,14 +137,14 @@ textLabel.Size = UDim2.new(1, 0, 1, 0)
 textLabel.Position = UDim2.new(0, 1, 0, 1)
 textLabel.BackgroundTransparency = 1
 textLabel.TextScaled = true
-textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth -
+textLabel.Text = "血量: "..char.Humanoid.Health.."/"..char.Humanoid.MaxHealth -- Your displayed text
 textLabel.TextColor3 = Color3.fromRGB(117, 117, 117)
 textLabel.Font = Enum.Font.Arcade
 textLabel.Parent = billboard
 
 local charnamebill = Instance.new("BillboardGui")
-charnamebill.Size = UDim2.new(4, 0, 1, 0) 
-charnamebill.StudsOffset = Vector3.new(0, 2, 0) 
+charnamebill.Size = UDim2.new(9, 0, 1, 0) -- Adjust size
+charnamebill.StudsOffset = Vector3.new(0, 2, 0) -- Position above head
 charnamebill.Adornee = char.Head
 charnamebill.Parent = char.Head
 charnamebill.AlwaysOnTop = true
@@ -187,8 +187,8 @@ end
 
 local function genesp(p)
 local billboard = Instance.new("BillboardGui")
-billboard.Size = UDim2.new(2, 0, 0.5, 0) 
-billboard.StudsOffset = Vector3.new(0, 1.25, 0) 
+billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
+billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
 billboard.Adornee = p.Main
 billboard.Parent = p.Main
 billboard.AlwaysOnTop = true
@@ -203,8 +203,8 @@ textLabel.Font = Enum.Font.Arcade
 textLabel.Parent = billboard
 
 local gennamebill = Instance.new("BillboardGui")
-gennamebill.Size = UDim2.new(4, 0, 1, 0) 
-gennamebill.StudsOffset = Vector3.new(0, 2, 0) 
+gennamebill.Size = UDim2.new(9, 0, 1, 0) -- Adjust size
+gennamebill.StudsOffset = Vector3.new(0, 2, 0) -- Position above head
 gennamebill.Adornee = p.Main
 gennamebill.Parent = p.Main
 gennamebill.AlwaysOnTop = true
@@ -254,8 +254,8 @@ end
 
 local function itemesp(p)
 local billboard = Instance.new("BillboardGui")
-billboard.Size = UDim2.new(2, 0, 0.5, 0) 
-billboard.StudsOffset = Vector3.new(0, 1.25, 0) 
+billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
+billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
 billboard.Adornee = p:FindFirstChild("ItemRoot")
 billboard.Parent = p:FindFirstChild("ItemRoot")
 billboard.AlwaysOnTop = true
